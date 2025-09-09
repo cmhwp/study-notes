@@ -42,6 +42,47 @@ $$P(A) = \frac{A包含的基本事件数}{基本事件总数}$$
 
 $$P(A) = \frac{A的测度}{样本空间的测度}$$
 
+#### 1.3 条件概率
+
+在事件B发生的条件下，事件A发生的概率称为条件概率：
+
+$$P(A|B) = \frac{P(AB)}{P(B)}, \quad P(B) > 0$$
+
+**贝叶斯定理**：
+
+$$P(B_i|A) = \frac{P(A|B_i)P(B_i)}{\sum_{j=1}^{n} P(A|B_j)P(B_j)}$$
+
+#### 1.4 随机变量的数字特征
+
+**期望值**（均值）：
+
+$$E[X] = \begin{cases}
+\sum_{i} x_i P(X = x_i) & \text{离散型} \\
+\int_{-\infty}^{\infty} x f(x) dx & \text{连续型}
+\end{cases}$$
+
+**方差**：
+
+$$Var(X) = E[(X - E[X])^2] = E[X^2] - (E[X])^2$$
+
+**标准差**：
+
+$$\sigma = \sqrt{Var(X)}$$
+
+#### 1.5 常见分布
+
+**正态分布** $N(\mu, \sigma^2)$：
+
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+
+**泊松分布** $P(\lambda)$：
+
+$$P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}, \quad k = 0, 1, 2, \ldots$$
+
+**指数分布** $Exp(\lambda)$：
+
+$$f(x) = \lambda e^{-\lambda x}, \quad x \geq 0$$
+
 ## 作业与练习
 
 - [ ] 完成第一章习题

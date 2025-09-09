@@ -1,185 +1,55 @@
-/* 自定义主题样式 */
-
-/* 数学公式样式优化 */
-.katex {
-  font-size: 1.1em;
+/* 数学公式样式 */
+.MathJax {
+  outline: 0;
 }
 
-.katex-display {
-  margin: 1.5em 0;
-  padding: 1em;
-  background: var(--vp-c-bg-soft);
-  border-radius: 8px;
-  border-left: 4px solid var(--vp-c-brand-1);
+mjx-container[jax="CHTML"] {
+  line-height: 0;
 }
 
-/* 代码块样式优化 */
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+/* 改进代码块样式 */
 .vp-doc div[class*='language-'] {
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 16px 0;
 }
 
-/* 引用块样式 */
-.vp-doc blockquote {
-  border-left: 4px solid var(--vp-c-brand-1);
-  background: var(--vp-c-bg-soft);
-  padding: 1rem 1.5rem;
-  border-radius: 0 8px 8px 0;
-  margin: 1.5rem 0;
-}
-
-/* 表格样式优化 */
+/* 改进表格样式 */
 .vp-doc table {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.vp-doc th {
-  background: var(--vp-c-brand-1);
-  color: white;
-  font-weight: 600;
+/* 改进提示框样式 */
+.vp-doc .tip,
+.vp-doc .warning,
+.vp-doc .danger {
+  border-radius: 8px;
 }
 
-.vp-doc td {
-  border-bottom: 1px solid var(--vp-c-divider);
+/* 自定义主色调 */
+:root {
+  --vp-c-brand-1: #646cff;
+  --vp-c-brand-2: #747bff;
+  --vp-c-brand-3: #535bf2;
 }
 
-/* 侧边栏样式 */
+/* 深色模式下的数学公式 */
+.dark mjx-container {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* 改进侧边栏 */
 .VPSidebar {
-  background: var(--vp-c-bg-soft);
+  border-radius: 0 12px 12px 0;
 }
 
-.VPSidebarItem .text {
-  font-weight: 500;
-}
-
-.VPSidebarItem.is-active .text {
-  color: var(--vp-c-brand-1);
-  font-weight: 600;
-}
-
-/* 导航栏样式 */
+/* 改进导航栏 */
 .VPNav {
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.8);
-}
-
-.dark .VPNav {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-/* 页脚样式 */
-.VPFooter {
-  background: var(--vp-c-bg-soft);
-  border-top: 1px solid var(--vp-c-divider);
-}
-
-/* 卡片样式 */
-.vp-doc .custom-card {
-  background: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin: 1rem 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.vp-doc .custom-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
-
-/* 按钮样式 */
-.vp-doc .custom-button {
-  display: inline-block;
-  background: var(--vp-c-brand-1);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.vp-doc .custom-button:hover {
-  background: var(--vp-c-brand-2);
-  transform: translateY(-1px);
-}
-
-/* 徽章样式 */
-.vp-doc .badge {
-  display: inline-block;
-  padding: 0.25rem 0.5rem;
-  background: var(--vp-c-brand-1);
-  color: white;
-  border-radius: 4px;
-  font-size: 0.8em;
-  font-weight: 500;
-  margin: 0 0.25rem;
-}
-
-/* 进度条样式 */
-.vp-doc .progress-bar {
-  width: 100%;
-  height: 8px;
-  background: var(--vp-c-divider);
-  border-radius: 4px;
-  overflow: hidden;
-  margin: 1rem 0;
-}
-
-.vp-doc .progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
-  border-radius: 4px;
-  transition: width 0.3s ease;
-}
-
-/* 响应式优化 */
-@media (max-width: 768px) {
-  .vp-doc .custom-card {
-    padding: 1rem;
-    margin: 0.5rem 0;
-  }
-  
-  .katex-display {
-    padding: 0.5rem;
-    margin: 1rem 0;
-  }
-}
-
-/* 深色模式优化 */
-.dark .vp-doc blockquote {
-  background: var(--vp-c-bg-soft);
-}
-
-.dark .vp-doc .custom-card {
-  background: var(--vp-c-bg-soft);
-  border-color: var(--vp-c-divider);
-}
-
-/* 动画效果 */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.vp-doc .fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-/* 数学公式内联样式 */
-.vp-doc .katex-inline {
-  background: var(--vp-c-bg-soft);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-size: 0.95em;
 }
